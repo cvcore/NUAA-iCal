@@ -12,6 +12,12 @@
 		851BF47119F523A900B77CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 851BF47019F523A900B77CAF /* Images.xcassets */; };
 		851BF47419F523A900B77CAF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 851BF47219F523A900B77CAF /* MainMenu.xib */; };
 		851BF48019F523A900B77CAF /* CalendarImporterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 851BF47F19F523A900B77CAF /* CalendarImporterTests.m */; };
+		857B719E19FCE0A500E3C6C8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857B719D19FCE0A500E3C6C8 /* EventKit.framework */; };
+		857B71EE19FCF08900E3C6C8 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B71E819FCF08900E3C6C8 /* XPathQuery.m */; };
+		857B71EF19FCF08900E3C6C8 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B71EA19FCF08900E3C6C8 /* TFHppleElement.m */; };
+		857B71F019FCF08900E3C6C8 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B71EC19FCF08900E3C6C8 /* TFHpple.m */; };
+		857B71F319FCF87900E3C6C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857B71F219FCF87900E3C6C8 /* Cocoa.framework */; };
+		857B71F519FDEE5800E3C6C8 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 857B71F419FDEE5800E3C6C8 /* libxml2.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,17 @@
 		851BF47919F523A900B77CAF /* CalendarImporterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalendarImporterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		851BF47E19F523A900B77CAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		851BF47F19F523A900B77CAF /* CalendarImporterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarImporterTests.m; sourceTree = "<group>"; };
+		851BF48919F5240C00B77CAF /* CalendarStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CalendarStore.framework; path = System/Library/Frameworks/CalendarStore.framework; sourceTree = SDKROOT; };
+		857B719D19FCE0A500E3C6C8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		857B71A119FCEC8C00E3C6C8 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		857B71E819FCF08900E3C6C8 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathQuery.m; path = hpple/XPathQuery.m; sourceTree = "<group>"; };
+		857B71E919FCF08900E3C6C8 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XPathQuery.h; path = hpple/XPathQuery.h; sourceTree = "<group>"; };
+		857B71EA19FCF08900E3C6C8 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHppleElement.m; path = hpple/TFHppleElement.m; sourceTree = "<group>"; };
+		857B71EB19FCF08900E3C6C8 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHppleElement.h; path = hpple/TFHppleElement.h; sourceTree = "<group>"; };
+		857B71EC19FCF08900E3C6C8 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TFHpple.m; path = hpple/TFHpple.m; sourceTree = "<group>"; };
+		857B71ED19FCF08900E3C6C8 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = hpple/TFHpple.h; sourceTree = "<group>"; };
+		857B71F219FCF87900E3C6C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		857B71F419FDEE5800E3C6C8 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857B71F519FDEE5800E3C6C8 /* libxml2.2.dylib in Frameworks */,
+				857B71F319FCF87900E3C6C8 /* Cocoa.framework in Frameworks */,
+				857B719E19FCE0A500E3C6C8 /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +96,7 @@
 		851BF46819F523A900B77CAF /* CalendarImporter */ = {
 			isa = PBXGroup;
 			children = (
+				857B71F119FCF09000E3C6C8 /* Hpple */,
 				851BF46D19F523A900B77CAF /* AppDelegate.h */,
 				851BF46E19F523A900B77CAF /* AppDelegate.m */,
 				851BF47019F523A900B77CAF /* Images.xcassets */,
@@ -88,6 +109,11 @@
 		851BF46919F523A900B77CAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				857B71F219FCF87900E3C6C8 /* Cocoa.framework */,
+				857B71A119FCEC8C00E3C6C8 /* libxml2.dylib */,
+				857B71F419FDEE5800E3C6C8 /* libxml2.2.dylib */,
+				857B719D19FCE0A500E3C6C8 /* EventKit.framework */,
+				851BF48919F5240C00B77CAF /* CalendarStore.framework */,
 				851BF46A19F523A900B77CAF /* Info.plist */,
 				851BF46B19F523A900B77CAF /* main.m */,
 			);
@@ -109,6 +135,19 @@
 				851BF47E19F523A900B77CAF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		857B71F119FCF09000E3C6C8 /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				857B71E819FCF08900E3C6C8 /* XPathQuery.m */,
+				857B71E919FCF08900E3C6C8 /* XPathQuery.h */,
+				857B71EA19FCF08900E3C6C8 /* TFHppleElement.m */,
+				857B71EB19FCF08900E3C6C8 /* TFHppleElement.h */,
+				857B71EC19FCF08900E3C6C8 /* TFHpple.m */,
+				857B71ED19FCF08900E3C6C8 /* TFHpple.h */,
+			);
+			name = Hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				851BF46F19F523A900B77CAF /* AppDelegate.m in Sources */,
+				857B71F019FCF08900E3C6C8 /* TFHpple.m in Sources */,
 				851BF46C19F523A900B77CAF /* main.m in Sources */,
+				857B71EE19FCF08900E3C6C8 /* XPathQuery.m in Sources */,
+				857B71EF19FCF08900E3C6C8 /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +321,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -315,6 +362,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/usr/include/libxml2",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -328,6 +380,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CalendarImporter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -339,6 +392,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CalendarImporter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -398,6 +452,7 @@
 				851BF48519F523A900B77CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		851BF48619F523A900B77CAF /* Build configuration list for PBXNativeTarget "CalendarImporterTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +461,7 @@
 				851BF48819F523A900B77CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
