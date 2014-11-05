@@ -18,6 +18,7 @@
 		857B71F019FCF08900E3C6C8 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B71EC19FCF08900E3C6C8 /* TFHpple.m */; };
 		857B71F319FCF87900E3C6C8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 857B71F219FCF87900E3C6C8 /* Cocoa.framework */; };
 		857B71F519FDEE5800E3C6C8 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 857B71F419FDEE5800E3C6C8 /* libxml2.2.dylib */; };
+		BF2FDD911A09F19A00DAC623 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF2FDD901A09F19A00DAC623 /* Settings.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		857B71ED19FCF08900E3C6C8 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TFHpple.h; path = hpple/TFHpple.h; sourceTree = "<group>"; };
 		857B71F219FCF87900E3C6C8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		857B71F419FDEE5800E3C6C8 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		BF2FDD901A09F19A00DAC623 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				857B71F119FCF09000E3C6C8 /* Hpple */,
 				851BF46D19F523A900B77CAF /* AppDelegate.h */,
 				851BF46E19F523A900B77CAF /* AppDelegate.m */,
+				BF2FDD901A09F19A00DAC623 /* Settings.plist */,
 				851BF47019F523A900B77CAF /* Images.xcassets */,
 				851BF47219F523A900B77CAF /* MainMenu.xib */,
 				851BF46919F523A900B77CAF /* Supporting Files */,
@@ -232,6 +235,7 @@
 			files = (
 				851BF47119F523A900B77CAF /* Images.xcassets in Resources */,
 				851BF47419F523A900B77CAF /* MainMenu.xib in Resources */,
+				BF2FDD911A09F19A00DAC623 /* Settings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
