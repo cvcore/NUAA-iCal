@@ -20,7 +20,8 @@
 @property (nonatomic, strong) NSArray *scheduleArray;
 @property (nonatomic, strong) NSDictionary *columnDictionary;
 @property (nonatomic, strong) EKEventStore *eventStore;
-
+@property (nonatomic, strong) NSDictionary *Setings;
+@property (nonatomic, strong) EKCalendar *defaultCalendar;
 @end
 
 @implementation AppDelegate
@@ -61,6 +62,8 @@
 	[self.calTable setDelegate:self];
 	[self.calTable setDataSource:self];
 	[self.addToCalendar setEnabled:NO];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"Settings" ofType:@"plist"];
+    self.Setings = [NSDictionary dictionaryWithContentsOfFile:path];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -87,6 +90,8 @@
 			});
 		}];
 	}
+    EKCalendar *calendar = [self getCalendarbyTitl:@"NuaaTimeTable"];
+
 	NSEnumerator *schdEnum = [_scheduleArray objectEnumerator];
 	[schdEnum nextObject];
 	for (TFHppleElement *schdItem in schdEnum) {
@@ -124,7 +129,7 @@
 			classEvent.startDate = startDate;
 			classEvent.endDate = endDate;
 			classEvent.allDay = NO;
-			classEvent.calendar = [_eventStore defaultCalendarForNewEvents]; //TODO: add a pickup
+			classEvent.calendar = calendar; //TODO: add a pickup
 			classEvent.location = locationString;
 			
 			NSError *e;
@@ -170,6 +175,53 @@
 		}
 	}
 	return result;
+}
+
+// ljlin
+
+- (EKCalendar*)getCalendarbyTitl:(NSString*)titl{
+
+    EKSource *localSource = nil;
+    EKCalendar *cal = nil;
+    NSString *identifier = self.Setings[@"identifier"];
+    for (EKSource *source in self.eventStore.sources)
+    {
+        if (source.sourceType == EKSourceTypeCalDAV &&
+            [source.title isEqualToString:@"iCloud"])
+        {
+            localSource = source;
+            break;
+        }
+    }
+    if ([identifier isEqualToString:@""])
+    {
+        cal = [EKCalendar calendarForEntityType:EKEntityTypeEvent eventStore:self.eventStore];
+        cal.title = titl;
+        cal.source = localSource;
+        self.defaultCalendar = cal;
+        [self.eventStore saveCalendar:cal commit:YES error:nil];
+        NSLog(@"creat cal id = %@", cal.calendarIdentifier);
+        [self.Setings setValue:cal.calendarIdentifier forKey:@"identifier"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"Settings" ofType:@"plist"];
+        [self.Setings writeToFile:path atomically:YES];
+    }
+    else{
+        cal=[self.eventStore calendarWithIdentifier:identifier];
+        self.defaultCalendar = cal;
+        NSLog(@"get cal id = %@", cal.calendarIdentifier);
+    }
+
+    //NSLog(@"%lu",(unsigned long)self.eventStore.sources.count);
+    
+    NSArray *calendars = [self.eventStore calendarsForEntityType:EKEntityTypeEvent];
+    
+    for (EKCalendar* cal in calendars){
+        NSLog(@"titl = %@",cal.title);
+        NSLog(@"source = %@",cal.source.title);
+        NSLog(@"id = %@",cal.calendarIdentifier);
+        NSLog(@"\n");
+    }
+    return cal;
 }
 
 @end
