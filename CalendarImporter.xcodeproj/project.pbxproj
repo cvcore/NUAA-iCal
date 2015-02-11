@@ -40,6 +40,8 @@
 		85DA04CC1A7E1B6F003025A9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85DA04CB1A7E1B6F003025A9 /* MainMenu.xib */; };
 		85EC4AB01A8B8359008D479E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4AAF1A8B8359008D479E /* MainWindow.xib */; };
 		85EC4AB21A8B85D0008D479E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 85EC4AB11A8B85D0008D479E /* README.md */; };
+		85EC4AB51A8B8897008D479E /* ScreenShot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4AB31A8B8897008D479E /* ScreenShot1.png */; };
+		85EC4AB61A8B8897008D479E /* ScreenShot2.png in Resources */ = {isa = PBXBuildFile; fileRef = 85EC4AB41A8B8897008D479E /* ScreenShot2.png */; };
 		85F8FF541A7FBA9800B0D123 /* NUAADedWebService.xml in Resources */ = {isa = PBXBuildFile; fileRef = 85F8FF531A7FBA9800B0D123 /* NUAADedWebService.xml */; };
 		BF2FDD911A09F19A00DAC623 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF2FDD901A09F19A00DAC623 /* Settings.plist */; };
 /* End PBXBuildFile section */
@@ -118,6 +120,8 @@
 		85DA04CB1A7E1B6F003025A9 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		85EC4AAF1A8B8359008D479E /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		85EC4AB11A8B85D0008D479E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		85EC4AB31A8B8897008D479E /* ScreenShot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot1.png; sourceTree = "<group>"; };
+		85EC4AB41A8B8897008D479E /* ScreenShot2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScreenShot2.png; sourceTree = "<group>"; };
 		85F8FF531A7FBA9800B0D123 /* NUAADedWebService.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NUAADedWebService.xml; sourceTree = "<group>"; };
 		BF2FDD901A09F19A00DAC623 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -246,6 +250,8 @@
 		851BF46919F523A900B77CAF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				85EC4AB31A8B8897008D479E /* ScreenShot1.png */,
+				85EC4AB41A8B8897008D479E /* ScreenShot2.png */,
 				85EC4AB11A8B85D0008D479E /* README.md */,
 				855CD7EB1A8B3B6D005FF321 /* Images.xcassets */,
 				85F8FF531A7FBA9800B0D123 /* NUAADedWebService.xml */,
@@ -427,7 +433,9 @@
 			files = (
 				85EC4AB01A8B8359008D479E /* MainWindow.xib in Resources */,
 				855CD7EF1A8B453E005FF321 /* Images.xcassets in Resources */,
+				85EC4AB61A8B8897008D479E /* ScreenShot2.png in Resources */,
 				855CD7F11A8B7F82005FF321 /* Credits.rtf in Resources */,
+				85EC4AB51A8B8897008D479E /* ScreenShot1.png in Resources */,
 				85F8FF541A7FBA9800B0D123 /* NUAADedWebService.xml in Resources */,
 				BF2FDD911A09F19A00DAC623 /* Settings.plist in Resources */,
 				85DA04CC1A7E1B6F003025A9 /* MainMenu.xib in Resources */,
