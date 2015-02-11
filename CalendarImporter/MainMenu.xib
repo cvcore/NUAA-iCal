@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="sxO-5H-2Vf" id="tb7-Ms-rje"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="sxO-5H-2Vf" customClass="AppDelegate"/>
+        <menu title="AMainMenu" systemMenu="main" id="gnL-t8-6hR">
+            <items>
+                <menuItem title="CalendarImporter" id="ohs-Ah-StR">
+                    <menu key="submenu" title="CalendarImporter" systemMenu="apple" id="ls5-xg-gDS">
+                        <items>
+                            <menuItem title="About" id="0k7-A9-d1F">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="PLU-bV-04u"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="Sph-fW-rXY">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit" keyEquivalent="q" id="v1G-Pm-pCA">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="Xnv-w7-auq"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+    </objects>
+</document>

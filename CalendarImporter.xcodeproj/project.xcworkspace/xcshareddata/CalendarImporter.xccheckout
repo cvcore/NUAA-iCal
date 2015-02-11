@@ -5,23 +5,31 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>59ABD297-D3CA-4A55-B722-653BA4131307</string>
+	<string>6E3B4957-AA53-45EB-BF5C-E2EE1F6F3962</string>
 	<key>IDESourceControlProjectName</key>
 	<string>CalendarImporter</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>C98F34640CDAF8C591AEB91EEF768A6198C4416E</key>
+		<string>https://github.com/topfunky/hpple.git</string>
 		<key>EC1FC5A98F3EBD093B03AA72119EA4846D533300</key>
-		<string>https://github.com/ljlin/NUAACalendarImporter.git</string>
+		<string>github.com:c0r3d3v/NUAACalendarImporter.git</string>
+		<key>FE4192E41AE603EDB3B4C589F4B406D348D1D3DC</key>
+		<string>https://github.com/priore/SOAPEngine.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CalendarImporter.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>C98F34640CDAF8C591AEB91EEF768A6198C4416E</key>
+		<string>../..CalendarImporter/hpple</string>
 		<key>EC1FC5A98F3EBD093B03AA72119EA4846D533300</key>
 		<string>../..</string>
+		<key>FE4192E41AE603EDB3B4C589F4B406D348D1D3DC</key>
+		<string>../../CalendarImporter/SOAPEngine</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/ljlin/NUAACalendarImporter.git</string>
+	<string>github.com:c0r3d3v/NUAACalendarImporter.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +42,23 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>EC1FC5A98F3EBD093B03AA72119EA4846D533300</string>
 			<key>IDESourceControlWCCName</key>
-			<string>NUAACalendarImporter@ljlin</string>
+			<string>CalendarImporter</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C98F34640CDAF8C591AEB91EEF768A6198C4416E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>hpple</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FE4192E41AE603EDB3B4C589F4B406D348D1D3DC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SOAPEngine</string>
 		</dict>
 	</array>
 </dict>
