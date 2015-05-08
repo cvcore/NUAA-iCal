@@ -45,7 +45,7 @@
     [self didChangeValueForKey:@"courses"];
 }
 
-- (void)populateCalendarPopUp {
+- (void)updateCalendarArray {
     if (_eventStore == nil) {
         _eventStore = [[EKEventStore alloc] init];
         [_eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
@@ -54,11 +54,15 @@
             });
         }];
     }
+    
+    [self.calendarPopUp removeAllItems];
+    [self.calendarPopUp addItemWithTitle:@"Choose Calendar"];
     _calendarPopUpDic = [[NSMutableDictionary alloc] init];
     for (EKCalendar *calendar in [_eventStore calendarsForEntityType:EKEntityTypeEvent]) {
         [self.calendarPopUp addItemWithTitle:calendar.title];
         [self.calendarPopUpDic setObject:calendar forKey:calendar.title];
     }
+    
 }
 
 - (void)awakeFromNib {
@@ -70,7 +74,7 @@
     
     _courses = [[NSMutableArray alloc] init];
     
-    [self populateCalendarPopUp];
+    [self updateCalendarArray];
 }
 
 #pragma mark - helper functions
@@ -87,7 +91,8 @@
 }
 
 - (NSDate *)calculateFirstSemesterMonday {
-    NSLocale *cnLocale = [NSLocale localeWithLocaleIdentifier:@"zh_CN"];
+    NSCalendar *cstCalendar = [[NSLocale localeWithLocaleIdentifier:@"zh_CN"] objectForKey:NSLocaleCalendar]; //China Standard Time
+    [cstCalendar setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Shanghai"]];
     NSArray *yearArray = [self.semesterPopUp.titleOfSelectedItem componentsSeparatedByString:@"-"];
     NSDate *approx;
     NSDateComponents *approxComp = [[NSDateComponents alloc] init];
@@ -95,14 +100,14 @@
         [approxComp setDay:1];
         [approxComp setMonth:9];
         [approxComp setYear:[[yearArray objectAtIndex:0] integerValue]];
-        approx = [[cnLocale objectForKey:NSLocaleCalendar] dateFromComponents:approxComp];
+        approx = [cstCalendar dateFromComponents:approxComp];
     } else {
         [approxComp setDay:1];
         [approxComp setMonth:3];
         [approxComp setYear:[[yearArray objectAtIndex:1] integerValue]];
-        approx = [[cnLocale objectForKey:NSLocaleCalendar] dateFromComponents:approxComp];
+        approx = [cstCalendar dateFromComponents:approxComp];
     }
-    NSDateComponents *weekdayComp = [[cnLocale objectForKey:NSLocaleCalendar] components:NSCalendarUnitWeekday fromDate:approx];
+    NSDateComponents *weekdayComp = [cstCalendar components:NSCalendarUnitWeekday fromDate:approx];
     NSUInteger weekday = [weekdayComp weekday];
     
     NSDate *exact;
@@ -124,6 +129,10 @@
     NSString *season = [[NSString alloc] initWithFormat:@"%lu", seasonInt];
     NSString *sid = [_sidText stringValue];
     NSString *methodName = @"GetCourseTableByXh";
+    if (sid == nil || [sid isEqualToString:@""]) {
+        [self.mainWindow makeFirstResponder:self.sidText];
+        return;
+    }
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:year, @"xn", season, @"xq", sid, @"xh", nil];
     SoapUtility *su = [[SoapUtility alloc] initFromFile:@"NUAADedWebService"];
     NSString *postData = [su BuildSoapwithMethodName:methodName withParas:params];
@@ -164,8 +173,8 @@
                                  @(14*hours + 55*minutes),       // 6. 14:55 - 15:45
                                  @(16*hours + 15*minutes),       // 7. 16:15 - 17:05
                                  @(17*hours + 10*minutes),       // 8. 17:10 - 18:00
-                                 @(18*hours + 30*minutes),       // 9. 18:30 - 19:20
-                                 @(20*hours + 25*minutes), nil]; // 10. 19.25 - 20:15
+                                 @(18*hours + 45*minutes),       // 9. 18:45 - 19:35
+                                 @(20*hours + 45*minutes), nil]; // 10. 19.40 - 20:30
         
         for (NSString *weekIdx in course.weekNum) {
             NSDate *startDate, *endDate;
@@ -186,12 +195,13 @@
             
             EKEvent *calendarEvent = [EKEvent eventWithEventStore:_eventStore];
             calendarEvent.title = course.name;
-            calendarEvent.startDate = startDate;
+            calendarEvent.startDate = startDate; //Floating events such as all-day events are returned in the default time zone. Will always show the time zone in with the event was added. (This is kinda dirty.)
             calendarEvent.endDate = endDate;
             calendarEvent.allDay = NO;
             calendarEvent.calendar = calendar;
             calendarEvent.location = locationString;
             calendarEvent.notes = noteString;
+            calendarEvent.timeZone = [NSTimeZone systemTimeZone];
             
             NSError *eventStoreErr;
             [_eventStore saveEvent:calendarEvent span:EKSpanThisEvent commit:NO error:&eventStoreErr];
@@ -214,6 +224,7 @@
 	}
 }
 
+
 #pragma mark - XMLObjectMapperDelegate
 
 - (id <XMLMappedObject>)mapper:(XMLObjectMapper *)mapper startElementNamed:(NSString *)elementName withAttributes:(NSDictionary *)attributes currentObject:(CourseInfo<XMLMappedObject> *)currentObject {
@@ -234,5 +245,6 @@
     }
     
 }
+
 
 @end

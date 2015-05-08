@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -16,10 +16,8 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="420" height="314"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <value key="minSize" type="size" width="355" height="98"/>
-            <value key="maxSize" type="size" width="355" height="98"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="314"/>
+                <rect key="frame" x="0.0" y="5" width="420" height="314"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g89-bF-XHo">
@@ -81,7 +79,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="404.5" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
                                         <tableColumn width="53.29296875" minWidth="40" maxWidth="1000" id="uFX-PG-3Pb">
@@ -200,12 +198,45 @@
                     </scrollView>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-hV-hgp">
                         <rect key="frame" x="18" y="17" width="300" height="26"/>
-                        <popUpButtonCell key="cell" type="push" title="Choose Calendar" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Vhn-Mn-lJJ" id="L3r-rg-8oS">
+                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" autoenablesItems="NO" id="L3r-rg-8oS">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="menu"/>
-                            <menu key="menu" id="Jfe-7Q-vJ0">
+                            <menu key="menu" autoenablesItems="NO" id="Jfe-7Q-vJ0">
                                 <items>
-                                    <menuItem title="Choose Calendar" state="on" id="Vhn-Mn-lJJ"/>
+                                    <menuItem title="Choose Calendar" id="Vhn-Mn-lJJ">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="2jh-As-5oX"/>
+                                    <menuItem title="iCloud" enabled="NO" id="I5M-FW-V18">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" id="jd3-Cp-PGe">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" id="QMl-uE-zvB">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="dxM-aH-jVQ"/>
+                                    <menuItem title="Facebook" enabled="NO" id="8t2-RU-KSg">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" id="zyE-nd-spK">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Item" id="ZDJ-Ed-al5">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem isSeparatorItem="YES" id="xQS-0y-5Z0"/>
+                                    <menuItem title="Add Calendar" id="oVs-Nr-nt0">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                        <menu key="submenu" title="Add Calendar" id="652-tw-v2r">
+                                            <items>
+                                                <menuItem title="Item" id="Q93-bx-Dx8">
+                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                </menuItem>
+                                            </items>
+                                        </menu>
+                                    </menuItem>
                                 </items>
                             </menu>
                         </popUpButtonCell>
@@ -238,7 +269,7 @@
                     </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="423" y="246"/>
+            <point key="canvasLocation" x="453" y="247"/>
         </window>
         <customObject id="voI-c2-N3U" customClass="WindowController">
             <connections>
@@ -251,7 +282,7 @@
                 <outlet property="sidText" destination="9lL-eE-dgE" id="L6X-3T-Etd"/>
             </connections>
         </customObject>
-        <arrayController objectClassName="CourseInfo" editable="NO" id="AJh-az-lsU">
+        <arrayController objectClassName="CourseInfo" editable="NO" id="AJh-az-lsU" userLabel="CourseInfo">
             <declaredKeys>
                 <string>name</string>
                 <string>instructor</string>
@@ -264,6 +295,14 @@
                 <binding destination="voI-c2-N3U" name="contentArray" keyPath="self.courses" id="t9f-aQ-gER"/>
             </connections>
         </arrayController>
+        <arrayController id="Dkc-Jx-fDN" userLabel="Calendars"/>
         <userDefaultsController representsSharedInstance="YES" id="I46-q1-EXX"/>
+        <drawer trailingOffset="15" id="Kxe-tV-3Zt">
+            <size key="contentSize" width="100" height="100"/>
+            <size key="maxContentSize" width="10000" height="10000"/>
+            <connections>
+                <outlet property="parentWindow" destination="QvC-M9-y7g" id="MVh-kU-M32"/>
+            </connections>
+        </drawer>
     </objects>
 </document>

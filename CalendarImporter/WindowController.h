@@ -21,11 +21,13 @@
 @property (weak) IBOutlet NSWindow *mainWindow;
 
 @property NSMutableArray *courses;
+@property NSMutableArray *calendars;
 
 - (IBAction)downloadCalendar:(id)sender;
 - (IBAction)addToCalendar:(id)sender;
 - (IBAction)updateSemesterYear:(id)sender;
 - (IBAction)updateSemesterSeason:(id)sender;
+- (IBAction)triggerUpdateCalendar:(id)sender;
 
 
 @end
