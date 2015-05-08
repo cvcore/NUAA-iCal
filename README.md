@@ -17,4 +17,5 @@ SHA1 98b11e247c36e016e4d23bbc0e57a40f588e2ea3
 
 ## Credits
 感谢ljlin在开发过程中给予的帮助。[iOS版本](https://github.com/ljlin/NUAATimeTable)
+
 Spiritually supported by [Alexander Tianshu Li](https://cn.linkedin.com/in/iamtsli/en) from UNNC.
