@@ -108,7 +108,7 @@
         approx = [cstCalendar dateFromComponents:approxComp];
     }
     NSDateComponents *weekdayComp = [cstCalendar components:NSCalendarUnitWeekday fromDate:approx];
-    NSUInteger weekday = [weekdayComp weekday];
+    NSInteger weekday = [weekdayComp weekday];
     
     NSDate *exact;
     if (weekday == 1) {
